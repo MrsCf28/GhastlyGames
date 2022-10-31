@@ -1,9 +1,8 @@
 import { useEffect, useState } from 'react';
-import { fetchReviews } from '../api';
 import ReviewCard from './ReviewCards';
-import '../styling/SearchBar.css'
+import { fetchReviews } from '../../api';
 
-export default function Home() {
+export default function Reviews({category}) {
     const blankReview = {
         review_id: 0,
         title: '',
@@ -16,26 +15,22 @@ export default function Home() {
         votes: 0,
         comment_count: 0,
     };
+    
     const [reviews, setReviews] = useState(blankReview);
     const [isLoading, setIsLoading] = useState(true);
 
     useEffect(() => {
         setIsLoading(true);
-        fetchReviews().then(res => {
+        fetchReviews(category).then(res => {
             setReviews(res.reviews);
             setIsLoading(false);
         });
-    }, []);
+    }, [category]);
 
     if (isLoading) return <h3>Items loading ...</h3>;
 
     return (
-        <div id="HomePage">
-            <section className="FilterAndSort">
-                <div id='filter'>Categories</div>
-                <div id='sort'>Sort By</div>
-            </section>
-            <section className="ReviewCardsContainer">
+        <section className="ReviewCardsContainer">
                 {reviews.map(review => {
                     return (
                         <ReviewCard
@@ -45,6 +40,5 @@ export default function Home() {
                     );
                 })}
             </section>
-        </div>
-    );
+    )
 }

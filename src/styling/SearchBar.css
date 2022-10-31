@@ -2,6 +2,7 @@
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
+    font-weight:500;
 }
 
 #sort, #filter {
@@ -14,4 +15,11 @@
 #sort {
     border-color: orange;
     background-color: rgba(255, 68, 0, 0.689);
+}
+
+#categorySelect {
+    margin: 0 10px;
+    border-radius: 7px;
+    background-color: pink;
+    font-size: 16px;
 }

@@ -1,10 +1,11 @@
-import ghastly from '../resources/Ghastly.png'
-import '../styling/Header.css'
+import { Link } from 'react-router-dom';
+import ghastly from '../../resources/Ghastly.png'
+import '../../styling/Header.css'
 
 export default function HeaderBar() {
     return (
         <section className='HeaderSection'>
-            <div className='sideButton'>Home</div>
+            <Link to='/'><div className='sideButton'>Home</div></Link>
             <div className='title'>
             <img className='HeaderImage'
                 src={ghastly}
