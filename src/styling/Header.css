@@ -1,0 +1,40 @@
+.HeaderSection {
+    margin-left: 2vw;
+    padding-bottom: 1vh;
+    margin-bottom: 1vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    border-bottom: 10px double blueviolet;
+  }
+  
+  .HeaderImage {
+    margin-left: 0.5em;
+    max-width: 100px;
+    max-height: 5em;
+  }
+  
+  h1 {
+    font-size: 2em;
+    margin-top: 3px;
+    margin-bottom: 3px;
+    margin-right: 0.5em;
+    max-width: 130px;
+  }
+
+  .title {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .sideButton {
+    border: 3px solid blueviolet;
+    border-radius: 10px;
+    width: 4em;
+    height: 4em;
+    display: flex;
+    vertical-align: middle;
+    text-align: center;
+    flex-direction: column;
+    justify-content: space-evenly;
+  }

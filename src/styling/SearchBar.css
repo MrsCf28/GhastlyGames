@@ -1,0 +1,17 @@
+.FilterAndSort {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+#sort, #filter {
+    border: 2px solid red;
+    border-radius: 10px;
+    padding: 4px 7px;
+    background-color: rgba(220, 20, 60, 0.593);
+}
+
+#sort {
+    border-color: orange;
+    background-color: rgba(255, 68, 0, 0.689);
+}
