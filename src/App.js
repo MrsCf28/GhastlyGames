@@ -3,6 +3,7 @@ import './App.css';
 import Header from './components/0.Header/Header';
 import Home from './components/1.Home/Home';
 import Category from './components/1.Home/Category';
+import SingleReview from './components/2.SingleReview/SingleReview';
 
 function App() {
     return (
@@ -15,6 +16,7 @@ function App() {
                         path="/category/:category"
                         element={<Category />}
                     />
+                    <Route path="/reviews/:review_id" element={<SingleReview />} />
                 </Routes>
             </div>
         </BrowserRouter>

@@ -19,3 +19,9 @@ export function fetchCategories() {
         return res.data;
     });
 }
+
+export function fetchReviewById(review_id) {
+    return ghastlyGamesApi.get(`/reviews/${review_id}`).then(res => {
+        return res.data;
+    })
+}
