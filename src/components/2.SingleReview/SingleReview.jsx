@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import { fetchReviewById } from '../../api';
 import SingleReviewCard from './SingleReviewCard';
 import CommentCards from './CommentCards';
@@ -31,6 +31,7 @@ export default function SingleReview() {
     const [isReviewLoading, setIsReviewLoading] = useState(true);
     const [comments, setComments] = useState(blankComment);
     const [isCommentsLoading, setCommentsLoading] = useState(true);
+    const navigate = useNavigate();
 
     useEffect(() => {
         setIsReviewLoading(true);
@@ -48,6 +49,10 @@ export default function SingleReview() {
         });
     }, [review_id]);
 
+    function handleClick() {
+        navigate(`/reviews/${review_id}/comments`)
+    }
+
     return (
         <div className="ReviewAndCommentsPage">
             {isReviewLoading ? (
@@ -55,11 +60,13 @@ export default function SingleReview() {
             ) : (
                 <SingleReviewCard review={review} />
             )}
-            
             {isCommentsLoading ? (
                 <h3>Comments are loading ...</h3>
             ) : (
+                <section className='Comment Cards'>
+                <button onClick={handleClick}>Add new comment</button>
                 <CommentCards comments={comments} />
+                </section>
             )}
         </div>
     );
