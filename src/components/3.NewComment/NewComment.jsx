@@ -11,13 +11,9 @@ export default function NewComment({ review_id }) {
     }
 
     function handleCommentSubmit(event) {
-        console.log(newComment)
-        console.log(event)
-        console.log(event.target, "<<target")
         event.preventDefault();
         setNewComment(newComment)
         postComment(newComment, review_id, username).then(res => {
-            console.log("added comment");
             setNewComment("")
             setDisabled(true)
             event.target.reset();
