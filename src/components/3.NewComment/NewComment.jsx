@@ -1,12 +1,10 @@
-import { useEffect, useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useState } from 'react';
 import { postComment } from '../../api';
 
 export default function NewComment({ review_id }) {
     const username = 'grumpy19'
     const [newComment, setNewComment] = useState("");
     const [disabled, setDisabled] = useState(false)
-    const navigate = useNavigate();
 
     function handleCommentChange(event) {
         setNewComment(event.target.value)
@@ -29,14 +27,9 @@ export default function NewComment({ review_id }) {
     function handleClick() {
         setDisabled(false);
     }
-    
-    function handleBackClick() {
-        navigate(`/reviews/${review_id}`)
-    }
 
     return (
         <section id='NewCommentContainer'>
-            <section><button onClick={handleBackClick}>Back to comments</button></section>
             { !disabled && <section id='NewComment'>
                 <form className='newCommentForm' onSubmit={handleCommentSubmit}>
                     <label htmlFor='yourComment'>Comment:</label>
