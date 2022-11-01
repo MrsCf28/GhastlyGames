@@ -28,15 +28,17 @@ export default function NewComment({ review_id }) {
         <section id='NewCommentContainer'>
             { !disabled && <section id='NewComment'>
                 <form className='newCommentForm' onSubmit={handleCommentSubmit}>
-                    <label htmlFor='yourComment'>Comment:</label>
-                    <input type='text' value={newComment} onChange={handleCommentChange} disabled={disabled}></input>
+                    <label id='commentLabel' htmlFor='yourComment'>Comment:</label>
+                    <br />
+                    <textarea name='text' id='commentBox' value={newComment} onChange={handleCommentChange} disabled={disabled}></textarea>
+                    <br />
                     <label htmlFor='submit'></label>
-                    <button type='submit' disabled={disabled}>Submit</button>
+                    <button className='commentsButtons' id='submitComment' type='submit' disabled={disabled}>Submit</button>
                 </form>
             </section>}
             { disabled && <section>
                 <p>Your comment has been submitted!</p>
-                <button onClick={handleClick}>Add another comment</button>
+                <button className='commentsButtons' onClick={handleClick}>Add another comment</button>
                 </section>}
         </section>
     )

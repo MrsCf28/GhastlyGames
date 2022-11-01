@@ -4,6 +4,7 @@ import { fetchReviewById } from '../../api';
 import SingleReviewCard from './SingleReviewCard';
 import CommentsSection from './CommentsSection';
 import NewComment from '../3.NewComment/NewComment';
+import '../../styling/CommentsSection.css'
 
 export default function SingleReview() {
     const { review_id } = useParams();
@@ -46,7 +47,7 @@ export default function SingleReview() {
             )}
             {showComments && (
                 <section>
-                    <button onClick={handleClick}>
+                    <button className='commentsButtons' onClick={handleClick}>
                         Add new comment
                     </button>
                     <CommentsSection review_id={review_id} />
@@ -54,7 +55,7 @@ export default function SingleReview() {
             )}
             {!showComments && (
                 <section>
-                    <button onClick={handleClick}>
+                    <button className='commentsButtons' id='back' onClick={handleClick}>
                         Back to comments
                     </button>
                     <NewComment review_id={review_id} />
