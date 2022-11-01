@@ -1,8 +1,9 @@
-export default function CommentCard({comment}) {
+export default function CommentCard({ comment }) {
     return (
         <section className="CommentCard ">
             <p>
-                User: {comment.author}, Votes: {comment.votes}
+                User: <b>{comment.author}</b>, Votes:{' '}
+                <b>{comment.votes}</b>
             </p>
             <p>Date: {comment.created_at}</p>
             <p>Comment: {comment.body}</p>

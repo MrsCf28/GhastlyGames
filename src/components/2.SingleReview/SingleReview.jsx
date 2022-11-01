@@ -7,7 +7,7 @@ import { fetchComments } from '../../api';
 
 export default function SingleReview() {
     const { review_id } = useParams();
-    const blankReview = {
+    const blankReview = [{
         review_id: 0,
         title: '',
         category: '',
@@ -18,7 +18,7 @@ export default function SingleReview() {
         created_at: '',
         votes: 0,
         comment_count: 0,
-    };
+    }];
     const blankComment = {
         comment_id: 0,
         body: '',
