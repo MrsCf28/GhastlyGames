@@ -4,6 +4,7 @@ import Header from './components/0.Header/Header';
 import Home from './components/1.Home/Home';
 import Category from './components/1.Home/Category';
 import SingleReview from './components/2.SingleReview/SingleReview';
+import NewCommentPage from './components/3.NewComment/NewCommentPage';
 
 function App() {
     return (
@@ -17,6 +18,7 @@ function App() {
                         element={<Category />}
                     />
                     <Route path="/reviews/:review_id" element={<SingleReview />} />
+                    <Route path="/reviews/:review_id/comments" element={<NewCommentPage />} />
                 </Routes>
             </div>
         </BrowserRouter>

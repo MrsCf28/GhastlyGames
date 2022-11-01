@@ -31,3 +31,9 @@ export function updateReviewVotesById(review_id) {
         return res.data;
     })
 }
+
+export function postComment(comment, review_id, username) {
+    return ghastlyGamesApi.post(`/reviews/${review_id}/comments`, {username: `${username}`, body: `${comment}`}).then(res => {
+        return res.data;
+    })
+}
