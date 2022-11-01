@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const ghastlyGamesApi = axios.create({
-    baseURL: 'http://localhost:9090/api',
+    baseURL: 'https://ghastly-games-reviews.herokuapp.com/api/',
 });
 
 export function fetchReviews(query) {
