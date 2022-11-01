@@ -1,4 +1,4 @@
-import '../styling/ReviewCards.css'
+import '../../styling/ReviewCards.css'
 
 export default function ReviewCard({review}) {
     return(
