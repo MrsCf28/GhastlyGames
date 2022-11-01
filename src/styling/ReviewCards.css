@@ -50,3 +50,18 @@ h4, h3 {
     }
     
 }
+
+.votesLine {
+    display:flex;
+    flex-direction: row;
+    justify-content: space-between;
+    vertical-align: center;
+}
+
+.noOfVotes {
+    display: flex;
+    vertical-align: middle;
+    text-align: center;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
