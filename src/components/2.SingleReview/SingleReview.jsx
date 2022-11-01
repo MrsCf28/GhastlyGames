@@ -55,6 +55,7 @@ export default function SingleReview() {
             ) : (
                 <SingleReviewCard review={review} />
             )}
+            
             {isCommentsLoading ? (
                 <h3>Comments are loading ...</h3>
             ) : (

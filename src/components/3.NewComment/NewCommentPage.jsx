@@ -19,21 +19,23 @@ export default function NewCommentPage() {
         comment_count: 0,
     };
     const [review, setReview] = useState(blankReview);
-    const [isLoading, setIsLoading] = useState(true);
+    const [isReviewLoading, setIsReviewLoading] = useState(true);
 
     useEffect(() => {
-        setIsLoading(true);
+        setIsReviewLoading(true);
         fetchReviewById(review_id).then(res => {
             setReview(res.review);
-            setIsLoading(false);
+            setIsReviewLoading(false);
         })
     }, [review_id])
 
-    if (isLoading) return <h3>Items loading ...</h3>;
-
     return (
         <div className='ReviewAndCommentsPage'>
-            <SingleReviewCard review={review}/>
+            {isReviewLoading ? (
+                <h3>Review is loading ...</h3>
+            ) : (
+                <SingleReviewCard review={review} />
+            )}
             <NewComment review_id={review_id} />
         </div>
     );
