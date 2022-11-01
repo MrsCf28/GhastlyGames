@@ -25,3 +25,9 @@ export function fetchReviewById(review_id) {
         return res.data;
     })
 }
+
+export function fetchComments(review_id) {
+    return ghastlyGamesApi.get(`/reviews/${review_id}/comments`).then(res => {
+        return res.data;
+    })
+}
