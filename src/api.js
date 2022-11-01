@@ -31,3 +31,9 @@ export function fetchComments(review_id) {
         return res.data;
     })
 }
+
+export function updateReviewVotesById(review_id) {
+    return ghastlyGamesApi.patch(`/reviews/${review_id}`, {inc_votes: 1}).then(res => {
+        return res.data;
+    })
+}
