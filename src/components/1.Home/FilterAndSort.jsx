@@ -6,6 +6,9 @@ export default function FilterAndSort() {
     const [categories, setCategories] = useState([]);
     const [isLoading, setIsLoading] = useState(true);
     const sortByList = ["date", "total comments", "total votes"];
+    const [category, setCategory] = useState('all')
+    const [sortBy, setSortBy] = useState("created_at")
+    const [order, setOrder] = useState('desc')
     const navigate = useNavigate();
 
     useEffect(() => {
@@ -21,18 +24,38 @@ export default function FilterAndSort() {
     function handleCatChange(event) {
         const cat = event.target.value;
         if(cat === 'all') {
+            setCategory('all');
             navigate(`/`);
         } else {
-            navigate(`/category/${cat}`)
+            setCategory(cat);
+            navigate(`/category/${cat}/${sortBy}/${order}`);
         }
     }
 
     function handleSortByChange(event) {
-
+        let sortByOpt = event.target.value
+        if (sortByOpt === "date") {
+            sortByOpt = "created_at"
+            setSortBy("created_at")
+        } else if (sortByOpt === "total comments") {
+            sortByOpt = "comment_count"
+            setSortBy("comment_count")
+        } else {
+            sortByOpt = "votes"
+            setSortBy("votes")
+        }
+        navigate(`/category/${category}/${sortByOpt}/${order}`)
     }
 
-    function handleAscChange(event) {
-
+    function handleOrderClick(event) {
+        let ord = 'asc'
+        if (order === "asc") {
+            ord = 'desc'
+        }
+        setOrder(currOrder => {
+            return (currOrder === 'asc') ? 'desc' :'asc'
+        })
+        navigate(`/category/${category}/${sortBy}/${ord}`)
     }
 
     return (
@@ -74,7 +97,7 @@ export default function FilterAndSort() {
                     })}
                 </select>
                 <label htmlFor='ascOrDes'></label>
-                <button name='ascOrDes' id='ascOrDesButton' onChange={handleAscChange}>▲ ▼</button>
+                <button name='ascOrDes' id='ascOrDesButton' onClick={handleOrderClick}><p id="up">▲</p><p id="down">▼</p></button>
             </div>
         </section>
     );
