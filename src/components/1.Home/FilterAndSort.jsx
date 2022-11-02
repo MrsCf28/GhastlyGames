@@ -31,6 +31,10 @@ export default function FilterAndSort() {
 
     }
 
+    function handleAscChange(event) {
+
+    }
+
     return (
         <section className="FilterAndSort">
             <div id="filter">
@@ -69,6 +73,8 @@ export default function FilterAndSort() {
                         );
                     })}
                 </select>
+                <label htmlFor='ascOrDes'></label>
+                <button name='ascOrDes' id='ascOrDesButton' onChange={handleAscChange}>▲ ▼</button>
             </div>
         </section>
     );
