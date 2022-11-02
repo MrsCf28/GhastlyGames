@@ -7,9 +7,9 @@ const ghastlyGamesApi = axios.create({
 export function fetchReviews({params}) {    
     let cat = '';
     let sort = 'created_at'
-    let ord = 'ASC'
+    let ord = 'DESC'
 
-    if (params.category) { cat = params.category}
+    if (params.category && params.category !== 'all') { cat = params.category}
     if (params.sortBy) { sort = params.sortBy}
     if (params.order) { ord = params.order}
 
