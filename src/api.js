@@ -4,12 +4,18 @@ const ghastlyGamesApi = axios.create({
     baseURL: 'https://ghastly-games-reviews.herokuapp.com/api/',
 });
 
-export function fetchReviews(query) {
-    let queryString = `/reviews`;
-    if (typeof query === 'string') {
-        queryString += `?category=${query}`;
-    }
-    return ghastlyGamesApi.get(queryString).then(res => {
+export function fetchReviews({params}) {    
+    let cat = '';
+    let sort = 'created_at'
+    let ord = 'ASC'
+
+    if (params.category) { cat = params.category}
+    if (params.sortBy) { sort = params.sortBy}
+    if (params.order) { ord = params.order}
+
+    const query = `/reviews?category=${cat}&sort_by=${sort}&order=${ord}`
+    
+    return ghastlyGamesApi.get(query).then(res => {
         return res.data;
     });
 }
