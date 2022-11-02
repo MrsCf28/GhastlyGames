@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import ReviewCard from './ReviewCards';
 import { fetchReviews } from '../../api';
 
-export default function Reviews({category}) {
+export default function Reviews(params) {
     const blankReview = {
         review_id: 0,
         title: '',
@@ -21,11 +21,11 @@ export default function Reviews({category}) {
 
     useEffect(() => {
         setIsLoading(true);
-        fetchReviews(category).then(res => {
+        fetchReviews(params).then(res => {
             setReviews(res.reviews);
             setIsLoading(false);
         });
-    }, [category]);
+    }, [params]);
 
     if (isLoading) return <h3>Items loading ...</h3>;
 
