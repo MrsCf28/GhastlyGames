@@ -2,35 +2,29 @@ import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { fetchReviewById } from '../../api';
 import SingleReviewCard from './SingleReviewCard';
-import CommentCards from './CommentCards';
-import { fetchComments } from '../../api';
+import CommentsSection from './CommentsSection';
+import NewComment from '../3.NewComment/NewComment';
+import '../../styling/CommentsSection.css'
 
 export default function SingleReview() {
     const { review_id } = useParams();
-    const blankReview = [{
-        review_id: 0,
-        title: '',
-        category: '',
-        designer: '',
-        owner: '',
-        review_body: '',
-        review_img_url: '',
-        created_at: '',
-        votes: 0,
-        comment_count: 0,
-    }];
-    const blankComment = {
-        comment_id: 0,
-        body: '',
-        review_id: 0,
-        author: '',
-        votes: 0,
-        created_at: '',
-    };
+    const blankReview = [
+        {
+            review_id: 0,
+            title: '',
+            category: '',
+            designer: '',
+            owner: '',
+            review_body: '',
+            review_img_url: '',
+            created_at: '',
+            votes: 0,
+            comment_count: 0,
+        },
+    ];
     const [review, setReview] = useState(blankReview);
     const [isReviewLoading, setIsReviewLoading] = useState(true);
-    const [comments, setComments] = useState(blankComment);
-    const [isCommentsLoading, setCommentsLoading] = useState(true);
+    const [showComments, setShowComments] = useState(true);
 
     useEffect(() => {
         setIsReviewLoading(true);
@@ -40,13 +34,9 @@ export default function SingleReview() {
         });
     }, [review_id]);
 
-    useEffect(() => {
-        setCommentsLoading(true);
-        fetchComments(review_id).then(res => {
-            setComments(res.comments);
-            setCommentsLoading(false);
-        });
-    }, [review_id]);
+    function handleClick() {
+        setShowComments(current => !current);
+    }
 
     return (
         <div className="ReviewAndCommentsPage">
@@ -55,10 +45,21 @@ export default function SingleReview() {
             ) : (
                 <SingleReviewCard review={review} />
             )}
-            {isCommentsLoading ? (
-                <h3>Comments are loading ...</h3>
-            ) : (
-                <CommentCards comments={comments} />
+            {showComments && (
+                <section>
+                    <button className='commentsButtons' onClick={handleClick}>
+                        Add new comment
+                    </button>
+                    <CommentsSection review_id={review_id} />
+                </section>
+            )}
+            {!showComments && (
+                <section>
+                    <button className='commentsButtons' id='back' onClick={handleClick}>
+                        Back to comments
+                    </button>
+                    <NewComment review_id={review_id} />
+                </section>
             )}
         </div>
     );
