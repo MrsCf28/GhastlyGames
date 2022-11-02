@@ -80,7 +80,7 @@ export default function FilterAndSort() {
                 </select>
             </div>
             <div id="sort">
-            <label htmlFor="sortbyNames">
+            <label htmlFor="sortbyNames" id="sortByLabel">
             Sort By:
                 </label>
                 <select name="sortBy" id="sortBySelect" onChange={handleSortByChange}>
