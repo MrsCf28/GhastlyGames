@@ -3,12 +3,12 @@ import FilterAndSort from './FilterAndSort';
 import Reviews from './Reviews';
 
 export default function Category() {
-    const { category } = useParams();
+    const params = useParams();
 
     return (
         <div className="ReviewsPage">
             <FilterAndSort />
-            <Reviews category={category} />
+            <Reviews params={params} />
         </div>
     );
 }
