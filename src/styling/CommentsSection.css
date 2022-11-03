@@ -1,3 +1,11 @@
+.CommentsContainer {
+    vertical-align: middle;
+    text-align: center;
+    align-content: center;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
 .commentsButtons {
     min-height: 25px;
     border-radius: 7px;
