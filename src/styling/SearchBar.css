@@ -1,7 +1,4 @@
 .FilterAndSort {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
     font-weight:500;
 }
 
@@ -10,16 +7,40 @@
     border-radius: 10px;
     padding: 4px 7px;
     background-color: rgba(220, 20, 60, 0.593);
+    margin: 7px 13vw;
+    text-align: left;
 }
 
 #sort {
     border-color: orange;
     background-color: rgba(255, 68, 0, 0.689);
+    vertical-align: middle;
 }
 
-#categorySelect {
+#categorySelect, #sortBySelect {
     margin: 0 10px;
     border-radius: 7px;
     background-color: pink;
     font-size: 16px;
+}
+
+#sortBySelect {
+    margin-left: 24px;
+    margin-top: 7.5px;
+    background-color: peachpuff;
+    vertical-align: middle;
+}
+
+#sortByLabel {
+    vertical-align: middle;
+}
+
+#ascOrDesButton {
+    padding: 0 2px;
+    border-radius: 5px;
+}
+
+#up, #down {
+    padding: 0;
+    margin:0;
 }
