@@ -1,8 +1,9 @@
-import { useState } from 'react';
+import { useState, useContext } from 'react';
 import { postComment } from '../../api';
+import { UserContext } from '../../context/UserContext';
 
 export default function NewComment({ review_id }) {
-    const username = 'grumpy19';
+    const { user } = useContext(UserContext);
     const [newComment, setNewComment] = useState('');
     const [disabled, setDisabled] = useState(false);
 
@@ -13,7 +14,7 @@ export default function NewComment({ review_id }) {
     function handleCommentSubmit(event) {
         event.preventDefault();
         if (newComment !== '') {
-            postComment(newComment, review_id, username).then(res => {
+            postComment(newComment, review_id, user.name).then(res => {
                 setNewComment('');
                 setDisabled(true);
                 event.target.reset();
@@ -27,7 +28,7 @@ export default function NewComment({ review_id }) {
 
     return (
         <section id="NewCommentContainer">
-            {!disabled && (
+            {!disabled && user.signedIn && (
                 <section id="NewComment">
                     <form
                         className="newCommentForm"
@@ -60,7 +61,7 @@ export default function NewComment({ review_id }) {
                     </form>
                 </section>
             )}
-            {disabled && (
+            {disabled && user.signedIn && (
                 <section>
                     <p>Your comment has been submitted!</p>
                     <button
@@ -71,6 +72,9 @@ export default function NewComment({ review_id }) {
                     </button>
                 </section>
             )}
+            {!user.signedIn && <section>
+                <p>Please sign in to leave a comment</p>
+                </section>}
         </section>
     );
 }
