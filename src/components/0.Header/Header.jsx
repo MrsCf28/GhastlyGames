@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import ghastly from '../../resources/Ghastly.png'
 import '../../styling/Header.css'
+import SignIn from './SignIn';
 
 export default function HeaderBar() {
     return (
@@ -13,7 +14,9 @@ export default function HeaderBar() {
             ></img>
             <h1>Ghastly Games</h1>
             </div>
-            <div className='sideButton'>Sign In</div>
+            <div className='sideButton'>
+                <SignIn />
+            </div>
         </section>
     );
 }
