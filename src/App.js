@@ -16,7 +16,10 @@ function App() {
                         path="/category/:category"
                         element={<Category />}
                     />
-                    <Route path="/reviews/:review_id" element={<SingleReview />} />
+                    <Route
+                        path="/reviews/:review_id"
+                        element={<SingleReview />}
+                    />
                 </Routes>
             </div>
         </BrowserRouter>
