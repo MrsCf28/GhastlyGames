@@ -19,7 +19,7 @@ export default function FilterAndSort() {
         });
     }, []);
 
-    if (isLoading) return <h3>Items loading ...</h3>;
+    if (isLoading) return <h3>Filter bar loading ...</h3>;
 
     function handleCatChange(event) {
         const cat = event.target.value;

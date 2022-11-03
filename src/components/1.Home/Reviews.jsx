@@ -27,7 +27,7 @@ export default function Reviews(params) {
         });
     }, [params]);
 
-    if (isLoading) return <h3>Items loading ...</h3>;
+    if (isLoading) return <h3>Reviews loading ...</h3>;
 
     return (
         <section className="ReviewCardsContainer">

@@ -46,7 +46,7 @@ export default function SingleReview() {
                 <SingleReviewCard review={review} />
             )}
             {showComments && (
-                <section>
+                <section className='CommentsContainer'>
                     <button className='commentsButtons' onClick={handleClick}>
                         Add new comment
                     </button>
@@ -54,7 +54,7 @@ export default function SingleReview() {
                 </section>
             )}
             {!showComments && (
-                <section>
+                <section className='CommentsContainer'>
                     <button className='commentsButtons' id='back' onClick={handleClick}>
                         Back to comments
                     </button>
