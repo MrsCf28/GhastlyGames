@@ -1,0 +1,26 @@
+.ErrorHandler {
+    margin: 2em;
+    display: flex;
+    flex-direction: column;
+
+}
+
+.ErrorImage {
+    max-height: 15em;
+    max-width: 15em;
+    margin:auto;
+}
+
+h2 {
+    text-align: center;
+    margin-top: 0;
+    margin-bottom: 0.5em;
+
+}
+
+.ErrorMessages {
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 1em;
+    margin-bottom: 1em;
+}

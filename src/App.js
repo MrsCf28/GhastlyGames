@@ -5,6 +5,7 @@ import './App.css';
 import Header from './components/0.Header/Header';
 import Home from './components/1.Home/Home';
 import SingleReview from './components/2.SingleReview/SingleReview';
+import ErrorHandler from './components/5.ErrorHandling/Error';
 
 function App() {
     const [user, setUser] = useState({
