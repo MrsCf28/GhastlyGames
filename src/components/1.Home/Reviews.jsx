@@ -30,6 +30,7 @@ export default function Reviews(params) {
                 setIsLoading(false);
             })
             .catch(err => {
+                setIsLoading(false);
                 setErr(err);
             });
     }, [params]);

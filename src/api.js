@@ -10,14 +10,14 @@ export function fetchReviews({params}) {
     let ord = 'DESC'
 
     if (params.category && params.category !== 'all') { cat = params.category}
-    if (params.sortBy) { sort = params.sortBy}
-    if (params.order) { ord = params.order}
+    if (params.sortBy && ["created_at", "comment_count", "votes"].includes(params.sortBy)) { sort = params.sortBy}
+    if (params.order && params.order === 'asc') { ord = params.order}
 
     const query = `/reviews?category=${cat}&sort_by=${sort}&order=${ord}`
     
     return ghastlyGamesApi.get(query).then(res => {
         return res.data;
-    });
+    })
 }
 
 export function fetchCategories() {
