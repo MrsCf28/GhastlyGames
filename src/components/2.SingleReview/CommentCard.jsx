@@ -8,6 +8,13 @@ export default function CommentCard({ comment }) {
     const [commentDeleted, setCommentDeleted] = useState(false);
     const [nowDeleted, setNowDeleted] = useState(false);
 
+    let date = comment.created_at.slice(0,10);
+    const year = date.slice(0,4)
+    const month = date.slice(5,7)
+    const day = date.slice(8,10)
+    
+    date = `${day}/${month}/${year}`
+
     function handleDeleteClick() {
         setCommentDeleted(true);
         setErr(null);
@@ -41,7 +48,7 @@ export default function CommentCard({ comment }) {
                                 </button>
                             )}
                     </div>
-                    <p>Date: {comment.created_at}</p>
+                    <p>Date: {date}</p>
                     <p>Comment: {comment.body}</p>
                 </>
             )}
