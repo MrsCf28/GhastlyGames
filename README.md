@@ -1,72 +1,65 @@
-GhastlyGames
+# GhastlyGames
 
-# Getting Started with Create React App
+Ghastly Games is a full stack project based on a games content reviewing & discussion website and created using the Create React App :electron:.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<br />
+Here is the hosted version of this front-end project: 
 
-## Available Scripts
+### <img src="src/resources/Ghastly.png" alt="Ghastly Pokemon: 192" width=25px> [Ghastly Games Reviews Website](https://ghastlygamesreviews.netlify.app/)
+<br/>
 
-In the project directory, you can run:
+You can link to the back-end Git repository I created here:
+### <img src="src/resources/GitHub-Mark.png" alt="github" width=18px> [GitHub Ghastly-Games-API](https://github.com/MrsCf28/Ghastly-Games-API)
+<br />
 
-### `npm start`
+Here is the hosted version of the back-end api:
+### <img src="src/resources/heroku2.png" alt="heroku" width=18px> [Ghastly Games API](https://ghastly-games-reviews.herokuapp.com/api)
+<br />
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+[<img src="src/resources/GhastlyGameReviewsPreview.png" alt="Ghastly Games App Preview" width=100px>](https://ghastlygamesreviews.netlify.app/)
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## About
 
-### `npm test`
+The game reviews are divided into several categories. Each review has user curated ratings and can be up voted using the API. Users can also add or delete their own comments about a review.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+The site is not set up with user authentication, rather the user selection is available to show that comments can only be added or deleted by the appropriate signed in user (this is currently hard-coded).
 
-### `npm run build`
+This [front-end](https://ghastlygamesreviews.netlify.app/) requests data from the [backend](https://github.com/MrsCf28/Ghastly-Games-API), a REST API created with a PostgreSQL database and Express server and hosted by [Heroku](https://ghastly-games-reviews.herokuapp.com/api).
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Features
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- Mobile first design
+- View and filter reviews by category
+- Sort reviews by date, votes or comments
+- Users may add or delete their own comments
+- Users may vote on reviews
+- Error handling for invalid routes and bad requests
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Technologies
 
-### `npm run eject`
+- [React](https://reactjs.org/)
+- [Axios](https://www.npmjs.com/package/axios)
+- [React Router](https://reactrouter.com/en/main)
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Installation
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+Clone this repository on your local machine 
+```
+git clone https://github.com/MrsCf28/GhastlyGames
+```
+Navigate into the repository
+```
+cd fe-ghastly-games
+```
+Install dependencies
+```
+npm install
+```
+Start the application to run on your default browser
+```
+npm start
+```
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+### Built with Node Version:
+v18.7.0
