@@ -18,6 +18,7 @@ export default function ErrorHandler(props) {
                 src={shellder}
                 alt="Pokemon 90: Shellder, shiny version, orange not purple"
             ></img>
+            <h4>We suggest starting back at the home page</h4>
         </section>
     )
 
