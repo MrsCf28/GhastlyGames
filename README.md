@@ -45,6 +45,7 @@ This [front-end](https://ghastlygamesreviews.netlify.app/), hosted by Netlify, r
 ## Installation
 
 Firstly, make sure you have Node.js installed.
+
 Clone this repository on your local machine 
 ```
 git clone https://github.com/MrsCf28/GhastlyGames
