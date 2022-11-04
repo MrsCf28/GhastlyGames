@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { fetchCategories } from '../../api';
+import ErrorHandler from '../5.ErrorHandling/Error';
 
 export default function FilterAndSort() {
     const [categories, setCategories] = useState([]);
@@ -10,12 +11,16 @@ export default function FilterAndSort() {
     const [sortBy, setSortBy] = useState("created_at")
     const [order, setOrder] = useState('desc')
     const navigate = useNavigate();
+    const [err, setErr] = useState(null)
 
     useEffect(() => {
         setIsLoading(true);
+        setErr(null)
         fetchCategories().then(res => {
             setCategories(res.categories);
             setIsLoading(false);
+        }).catch(err => {
+            setErr(err)
         });
     }, []);
 
@@ -56,6 +61,17 @@ export default function FilterAndSort() {
             return (currOrder === 'asc') ? 'desc' :'asc'
         })
         navigate(`/category/${category}/${sortBy}/${ord}`)
+    }
+
+    if (err !== null) {
+        return (
+            <ErrorHandler
+                    code={err.code}
+                    msg={err.response.data.msg}
+                    status={err.response.status}
+                    statusText={err.response.statusText}
+                />
+        )
     }
 
     return (

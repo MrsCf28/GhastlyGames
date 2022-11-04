@@ -51,7 +51,5 @@ export function postComment(comment, review_id, username) {
 }
 
 export function deleteComment(comment_id) {
-    return ghastlyGamesApi.delete(`/comments/${comment_id}`).then(() => {
-        return console.log("comment has been deleted")
-    })
+    return ghastlyGamesApi.delete(`/comments/${comment_id}`)
 }
