@@ -24,7 +24,7 @@ The game reviews are divided into several categories. Each review has user curat
 
 The site is not set up with user authentication, rather the user selection is available to show that comments can only be added or deleted by the appropriate signed in user (this is currently hard-coded).
 
-This [front-end](https://ghastlygamesreviews.netlify.app/) requests data from the [backend](https://github.com/MrsCf28/Ghastly-Games-API), a REST API created with a PostgreSQL database and Express server and hosted by [Heroku](https://ghastly-games-reviews.herokuapp.com/api).
+This [front-end](https://ghastlygamesreviews.netlify.app/), hosted by Netlify, requests data from the [backend](https://github.com/MrsCf28/Ghastly-Games-API), a REST API created with a PostgreSQL database and Express server and hosted by [Heroku](https://ghastly-games-reviews.herokuapp.com/api).
 
 ### Features
 
