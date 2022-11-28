@@ -13,7 +13,7 @@ You can link to the back-end Git repository I created here:
 <br />
 
 Here is the hosted version of the back-end api:
-### <img src="src/resources/heroku2.png" alt="heroku" width=18px> [Ghastly Games API](https://ghastly-games-reviews.herokuapp.com/api)
+### <img src="src/resources/Cyclic.png" alt="Cyclic" width=40px> [Ghastly Games API](https://ghastly-games-api.cyclic.app/api)
 <br />
 
 [<img src="src/resources/GhastlyGameReviewsPreview.png" alt="Ghastly Games App Preview" width=100px>](https://ghastlygamesreviews.netlify.app/)
@@ -24,7 +24,7 @@ The game reviews are divided into several categories. Each review has user curat
 
 The site is not set up with user authentication, rather the user selection is available to show that comments can only be added or deleted by the appropriate signed in user (this is currently hard-coded).
 
-This [front-end](https://ghastlygamesreviews.netlify.app/), hosted by Netlify, requests data from the [backend](https://github.com/MrsCf28/Ghastly-Games-API), a REST API created with a PostgreSQL database and Express server and hosted by [Heroku](https://ghastly-games-reviews.herokuapp.com/api).
+This [front-end](https://ghastlygamesreviews.netlify.app/), hosted by Netlify, requests data from the [backend](https://github.com/MrsCf28/Ghastly-Games-API), a REST API created with a PostgreSQL database and Express server and hosted by [Cyclic](https://ghastly-games-api.cyclic.app/api).
 
 ### Features
 
