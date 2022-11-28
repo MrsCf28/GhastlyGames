@@ -16,7 +16,7 @@ export default function SingleReviewCard({ review }) {
     }
 
     return (
-        <section className="reviewCard">
+        <section className="reviewCardSingle">
             <h3>{review.title}</h3>
             <p>Designer: {review.designer}</p>
             <p>Category: {review.category}</p>
